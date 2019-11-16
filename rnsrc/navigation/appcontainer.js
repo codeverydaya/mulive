@@ -18,7 +18,7 @@ export default class AppContainer extends React.Component {
                 <Container
                     ref={nav => {NavigatorUtil.navigation = nav;}}
                     onNavigationStateChange={(prevState, currentState, action) => {
-                        console.log("onNavigationStateChange"+"---------")
+                        //console.log("onNavigationStateChange"+"---------")
 
                     }}>
                 </Container>
