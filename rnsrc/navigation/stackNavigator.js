@@ -16,6 +16,7 @@ import Teacher from '../pages/teacher';
 import About from '../pages/about';
 import Expect from '../pages/expect';
 import Setting from '../pages/setting';
+import App from '../pages/live/App';
 import DrawerNavigator from "./drawerNavigator";
 
 const  routeConfigs = {
@@ -36,6 +37,12 @@ const  routeConfigs = {
 
     About:{
         screen: About,
+        navigationOptions:{
+            header:null
+        }
+    },
+    App:{
+        screen: App,
         navigationOptions:{
             header:null
         }

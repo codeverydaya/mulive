@@ -69,7 +69,7 @@ export default class Hot extends Component {
 
                         return (
                             <TouchableOpacity onPress={()=>{
-                                NavigatorUtil.pushPage('MukeVideo',{videoData:VideoData[picNum]})}}
+                                NavigatorUtil.pushPage('App',{videoData:VideoData[picNum]})}}
                               key={i} style={{marginBottom:1,width: width+(i%3==1?2:0),backgroundColor:'#fff',height:height, justifyContent: 'center', alignItems: 'center',
                             }}>
                                 <View style={{backgroundColor: '#fff',width: width,height:height , justifyContent: 'flex-start', alignItems: 'center',overflow:'hidden'}}>
