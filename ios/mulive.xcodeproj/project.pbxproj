@@ -16,7 +16,7 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* muliveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* muliveTests.m */; };
-		354D08CF1089717C705C16DA /* libPods-mulive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B691A6ED62133A1B755926D6 /* libPods-mulive.a */; };
+		4282BD81EC81E76040DA516C /* libPods-mulive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B691A6ED62133A1B755926D6 /* libPods-mulive.a */; };
 		999E9A0E4F020257C47ACD4C /* libPods-muliveTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 247C41CAA783968A58DDEEF6 /* libPods-muliveTests.a */; };
 		D27846CC447A61627CBC8309 /* libPods-mulive-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEA9A48DF6AA42068C5E72A /* libPods-mulive-tvOS.a */; };
 		F2F39752BA92F9252CF02C8B /* libPods-mulive-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F124A818450655C9EB6B59 /* libPods-mulive-tvOSTests.a */; };
@@ -64,6 +64,7 @@
 		B691A6ED62133A1B755926D6 /* libPods-mulive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mulive.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3A4D30A149DE8DAA088848 /* Pods-muliveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-muliveTests.debug.xcconfig"; path = "Target Support Files/Pods-muliveTests/Pods-muliveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C6C93F202A0537650FB2029C /* Pods-mulive-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mulive-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-mulive-tvOS/Pods-mulive-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		EA10847F23805A76004CDCFC /* libreact-native-nodemediaclient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-nodemediaclient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F6F7DA99E0E44C5508747AF8 /* Pods-mulive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mulive.release.xcconfig"; path = "Target Support Files/Pods-mulive/Pods-mulive.release.xcconfig"; sourceTree = "<group>"; };
@@ -82,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				354D08CF1089717C705C16DA /* libPods-mulive.a in Frameworks */,
+				4282BD81EC81E76040DA516C /* libPods-mulive.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +140,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA10847F23805A76004CDCFC /* libreact-native-nodemediaclient.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				B691A6ED62133A1B755926D6 /* libPods-mulive.a */,
@@ -229,6 +231,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				91487D78867CDB4C16CA1983 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -410,6 +413,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91487D78867CDB4C16CA1983 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mulive/Pods-mulive-frameworks.sh",
+				"${PODS_ROOT}/NodeMediaClient/NodeMediaClient/NodeMediaClient.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NodeMediaClient.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mulive/Pods-mulive-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9BF70FBBC3554B12AB02DFB5 /* [CP] Check Pods Manifest.lock */ = {
