@@ -25,7 +25,7 @@ const routeConfigs = {
 }
 
 const navigatorConfig = {
-    initialRouteName: 'Welcome',//初始页面
+    initialRouteName: 'StackNavigator',//初始页面
 }
 
 const SwitchNavigator = createSwitchNavigator(routeConfigs, navigatorConfig);

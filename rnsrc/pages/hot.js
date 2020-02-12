@@ -5,7 +5,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,Image,FlatList,Animated,ScrollView,TouchableOpacity} from 'react-native';
+import {Platform, StyleSheet, Text, View,Image,ListView,FlatList,Animated,ScrollView,TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import  Util  from '../utils/util'
@@ -20,6 +20,7 @@ export default class Hot extends Component {
             data:[],
         }
         for(let i=0;i<50;i++){
+
             let item ={
                 name:'ing',
                 data: i+'你好----'+i

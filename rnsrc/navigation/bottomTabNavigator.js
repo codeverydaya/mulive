@@ -10,7 +10,8 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import BottomTabBar from '../components/common/bottomTabBar'
 import  NavigatorUtil from './navigatorUtil';
 
-import  Hot from '../pages/hot'
+//import  Hot from '../pages/hot'
+import  Hot from '../pages/mylist'
 import  MaterialTopTabNavigator from './materialTopTabNavigator'
 
 

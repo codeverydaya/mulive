@@ -94,7 +94,10 @@ export default class MukeVideo  extends Component {
 
     render() {
         const {navigation} = this.props;
-        const {videoData} = navigation.state.params ;
+        let {videoData} = navigation.state.params ;
+        if(!videoData){
+            videoData ={}
+        }
         const  videoScreen = this.videoScreen;
         return (
             <View style={{paddingTop:videoScreen.paddingTop,paddingLeft:videoScreen.paddingLeft ,flex: 1, justifyContent: this.state.isPortrait?'flex-start' : 'center', alignItems: this.state.isPortrait?'center' : 'flex-start', backgroundColor: '#ccc',}}>
@@ -102,7 +105,7 @@ export default class MukeVideo  extends Component {
                 <View style={{width: videoScreen.width, height: videoScreen.height,backgroundColor:'black'}}>
                     <Video ref={(ref) => {this.video = ref}}
                         /* For ExoPlayer */
-                           source={require('../assets/4.mp4')}
+                           source={{uri:videoData.addr}}
                            style={{width: '100%', height: '100%'}}
                            rate={this.state.rate}
                            paused={this.state.paused}
@@ -272,7 +275,8 @@ export default class MukeVideo  extends Component {
     calculateParams=(isPortrait)=> {
         const {navigation} = this.props;
         const params = navigation.state.params;
-        const videoData = params.videoData;
+        const videoData = params.videoData||{};
+
         //视频分辨率
         this.videoRatio = {
             width: videoData.videoWidth,

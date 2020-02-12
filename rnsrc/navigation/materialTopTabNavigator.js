@@ -8,29 +8,29 @@ import React, {Component} from 'react';
 import {Platform, DeviceInfo,StyleSheet, View, DeviceEventEmitter,} from 'react-native';
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 import NavigatorUtil from './navigatorUtil';
-import CourseContent from '../pages/courseContent'
+import MyList from '../pages/mylist'
+import Find from '../pages/find'
 
-import Teacher from '../pages/teacher'
-import About from '../pages/about'
-import Expect from '../pages/expect'
+
+
 import Util from "../utils/util";
 
 
 const routeConfigs =
     {
-        CourseContent: {
-            screen: CourseContent,
+      MyList: {
+            screen: Find,
             navigationOptions: {
-                tabBarLabel: '课程内容',
+                tabBarLabel: '关注',
                 tabBarIcon: ({tintColor, focused}) => (
                     <View style={{backgroundColor: 'red', height: 50, width: 50}}></View>
                 ),
             }
         },
         Teacher: {
-            screen: Teacher,
+            screen: MyList,
             navigationOptions: {
-                tabBarLabel: '关于讲师',
+                tabBarLabel: '发现',
                 tabBarIcon: ({tintColor, focused}) => (
                     <View style={{backgroundColor: 'red', height: 50, width: 50}}></View>
                 ),
@@ -38,9 +38,9 @@ const routeConfigs =
         },
 
         Expect: {
-            screen: Expect,
+            screen: MyList,
             navigationOptions: {
-                tabBarLabel: '敬请期待',
+                tabBarLabel: '同城',
                 tabBarIcon: ({tintColor, focused}) => (
                     <View style={{backgroundColor: 'red', height: 50, width: 50}}></View>
                 ),
@@ -52,23 +52,33 @@ const routeConfigs =
 //tabNavigatorConfig
 const tabNavigatorConfig =
     {
-        initialRouteName: 'CourseContent',//初始页面
-        swipeEnabled: false,
-        tabBarOptions: {
-            scrollEnabled: true,//是否支持 选项卡滚动，默认false
-            activeTintColor: '#2fd4f9',
-            inactiveTintColor: '#cdcdcd',
-            tabStyle: {
-                minWidth:80,
-            },
-            labelStyle: {
-                fontSize: 14
-            },
-            style: {
-                height:50+(Util.isPlatform("ios")?15:0)+(DeviceInfo.isIPhoneX_deprecated?20:0),
-                justifyContent: 'flex-end',
-            },
+      initialRouteName: 'MyList',//初始页面
+      swipeEnabled: true,
+      lazy:true,
+      tabBarOptions: {
+        scrollEnabled: true,//是否支持 选项卡滚动，默认false
+        activeTintColor: '#000',
+        inactiveTintColor: '#ccc',
+        tabStyle: {
+          width:80,
+
         },
+        indicatorStyle: {
+          backgroundColor: '#fff',
+        },
+        labelStyle: {
+          fontSize: 16,
+          justifyContent: 'flex-end',
+        },
+        style: {
+          height:50+(Util.isPlatform("ios")?15:0)+(DeviceInfo.isIPhoneX_deprecated?10:0),
+
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+          paddingTop:(Util.isPlatform("ios")?20:0)+(DeviceInfo.isIPhoneX_deprecated?10:0),
+          backgroundColor:'#fff'
+        },
+      },
 
     }
 

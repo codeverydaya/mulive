@@ -5,22 +5,22 @@
  */
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,Image,Easing,Animated} from 'react-native';
-import {createAppContainer} from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import BottomTabNavigator from './bottomTabNavigator';
 import MukeVideo from "../pages/mukeVideo";
+import HomePage from "../pages/homepage";
+import MyQrcode from "../pages/myqrcode";
+import Scan from "../pages/scan";
+import EditProfile from "../pages/editProfile";
+import HeadPicture from "../pages/headPicture";
 
-import CourseContent from '../pages/courseContent';
-import Teacher from '../pages/teacher';
-import About from '../pages/about';
-import Expect from '../pages/expect';
-import Setting from '../pages/setting';
+import MuCamera from "../pages/camera/muCamera";
+
 import App from '../pages/live/App';
 import DrawerNavigator from "./drawerNavigator";
 
 const  routeConfigs = {
-
     DrawerNavigator:{
         screen: DrawerNavigator,
         navigationOptions:{
@@ -29,26 +29,49 @@ const  routeConfigs = {
     },
     MukeVideo:{
         screen: MukeVideo,
-
         navigationOptions: ({ navigation }) => ({
             header:null
         }),
     },
 
-    About:{
-        screen: About,
-        navigationOptions:{
-            header:null
-        }
-    },
     App:{
         screen: App,
         navigationOptions:{
             header:null
         }
     },
-    Setting:{
-        screen: Setting,
+    MuCamera:{
+        screen: MuCamera,
+        navigationOptions:{
+            header:null
+        }
+    },
+    HomePage:{
+        screen: HomePage,
+        navigationOptions:{
+            header:null
+        }
+    },
+    MyQrcode:{
+        screen: MyQrcode,
+        navigationOptions:{
+            header:null
+        }
+    },
+    Scan:{
+        screen: Scan,
+        navigationOptions:{
+            header:null
+        }
+    },
+    EditProfile:{
+        screen: EditProfile,
+        navigationOptions:{
+            header:null
+        }
+    },
+    HeadPicture:{
+        screen: HeadPicture,
         navigationOptions:{
             header:null
         }
@@ -59,6 +82,9 @@ const  routeConfigs = {
 
 const  stackNavigatorConfig={
     initialRouteName: 'DrawerNavigator',//初始页面
+    //initialRouteName: 'HomePage',//初始页面
+
+    //initialRouteName: 'DrawerNavigator',//初始页面
     navigationOptions: {
         gesturesEnabled: false,
     },

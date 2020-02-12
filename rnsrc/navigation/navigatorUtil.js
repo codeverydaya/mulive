@@ -6,6 +6,7 @@
 import React, {Component} from 'react';
 import { StackActions } from 'react-navigation';
 import { NavigationActions } from 'react-navigation';
+import { DrawerActions } from 'react-navigation-drawer';
 
 export default class NavigatorUtil {
     static navigation =null;
@@ -36,6 +37,10 @@ export default class NavigatorUtil {
 
         this.navigation.dispatch(navigateAction);
 
+    }
+
+    static toggleDrawer(){
+        this.navigation.dispatch(DrawerActions.toggleDrawer());
     }
     static getCurrentRouteName(navigationState) {
         if (!navigationState) {
